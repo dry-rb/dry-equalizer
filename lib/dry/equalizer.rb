@@ -1,6 +1,13 @@
 # encoding: utf-8
 
 module Dry
+  # Build an equalizer module for the inclusion in other class
+  #
+  # @api public
+  def self.Equalizer(*keys)
+    Dry::Equalizer.new(*keys)
+  end
+
   # Define equality, equivalence and inspection methods
   class Equalizer < Module
     # Initialize an Equalizer with the given keys

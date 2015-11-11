@@ -2,13 +2,13 @@
 
 require 'spec_helper'
 
-describe Dry::Equalizer, '.new' do
+describe Dry::Equalizer do
   let(:object) { described_class }
   let(:name)   { 'User'          }
   let(:klass)  { ::Class.new     }
 
   context 'with no keys' do
-    subject { object.new }
+    subject { Dry::Equalizer() }
 
     before do
       # specify the class #name method
@@ -73,7 +73,7 @@ describe Dry::Equalizer, '.new' do
   end
 
   context 'with keys' do
-    subject { object.new(*keys) }
+    subject { Dry::Equalizer(*keys) }
 
     let(:keys)       { %i[firstname lastname].freeze  }
     let(:firstname)  { 'John'                         }
