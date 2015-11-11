@@ -3,6 +3,6 @@
 module Dry
   class Equalizer < Module
     # Gem version
-    VERSION = '0.0.11'.freeze
+    VERSION = '0.1.0'.freeze
   end # class Equalizer
 end
