@@ -1,4 +1,4 @@
-equalizer
+dry-equalizer
 =========
 
 Module to define equality, equivalence and inspection methods
@@ -69,6 +69,8 @@ dropped.
 
 Credits
 -------
+
+This is a fork of the original [equalizer](https://github.com/dkubb/equalizer).
 
 * Dan Kubb ([dkubb](https://github.com/dkubb))
 * Piotr Solnica ([solnic](https://github.com/solnic))
