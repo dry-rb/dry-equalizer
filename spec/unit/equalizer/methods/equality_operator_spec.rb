@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe Equalizer::Methods, '#==' do
+describe Dry::Equalizer::Methods, '#==' do
   subject { object == other }
 
   let(:object)          { described_class.new(true) }
@@ -10,7 +10,7 @@ describe Equalizer::Methods, '#==' do
 
   let(:super_class) do
     Class.new do
-      include Equalizer::Methods
+      include Dry::Equalizer::Methods
 
       attr_reader :boolean
 

@@ -15,7 +15,7 @@ if ENV['COVERAGE'] == 'true'
 end
 
 require 'devtools/spec_helper'
-require 'equalizer'
+require 'dry-equalizer'
 
 RSpec.configure do |config|
   config.raise_errors_for_deprecations!

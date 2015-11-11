@@ -1,10 +1,10 @@
 # encoding: utf-8
 
-require File.expand_path('../lib/equalizer/version', __FILE__)
+require File.expand_path('../lib/dry/equalizer/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.name        = 'equalizer'
-  gem.version     = Equalizer::VERSION.dup
+  gem.name        = 'dry-equalizer'
+  gem.version     = Dry::Equalizer::VERSION.dup
   gem.authors     = ['Dan Kubb', 'Markus Schirp']
   gem.email       = %w[dan.kubb@gmail.com mbj@schirp-dso.com]
   gem.description = 'Module to define equality, equivalence and inspection methods'

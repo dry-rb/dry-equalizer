@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe Equalizer, '#included' do
+describe Dry::Equalizer, '#included' do
   subject { descendant.instance_exec(object) { |mod| include mod } }
 
   let(:object)     { described_class.new        }
@@ -32,11 +32,11 @@ describe Equalizer, '#included' do
 
     superclass.class_eval do
       define_method(:included) do |_|
-        # Only set the flag when an Equalizer instance is included.
+        # Only set the flag when an Dry::Equalizer instance is included.
         # Otherwise, other module includes (which get triggered internally
         # in RSpec when `change` is used for the first time, since it uses
         # autoloading for its matchers) will wrongly set this flag.
-        included = true if self.kind_of?(Equalizer)
+        included = true if self.kind_of?(Dry::Equalizer)
       end
     end
 
