@@ -1,6 +1,6 @@
 language: ruby
 bundler_args: --without yard guard benchmarks
-script: "bundle exec rake ci"
+script: "bundle exec rake spec"
 cache: bundler
 sudo: false
 rvm:
