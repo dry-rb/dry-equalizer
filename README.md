@@ -3,12 +3,12 @@ dry-equalizer
 
 Module to define equality, equivalence and inspection methods
 
-[![Gem Version](http://img.shields.io/gem/v/equalizer.svg)][gem]
+[![Gem Version](http://img.shields.io/gem/v/dry-equalizer.svg)][gem]
 [![Build Status](http://img.shields.io/travis/dryrb/dry-equalizer.svg)][travis]
 [![Dependency Status](http://img.shields.io/gemnasium/dryrb/dry-equalizer.svg)][gemnasium]
 [![Code Climate](http://img.shields.io/codeclimate/github/dryrb/dry-equalizer.svg)][codeclimate]
 
-[gem]: https://rubygems.org/gems/equalizer
+[gem]: https://rubygems.org/gems/dry-equalizer
 [travis]: https://travis-ci.org/dryrb/dry-equalizer
 [gemnasium]: https://gemnasium.com/dryrb/dry-equalizer
 [codeclimate]: https://codeclimate.com/github/dryrb/dry-equalizer
@@ -18,7 +18,7 @@ Examples
 
 ``` ruby
 class GeoLocation
-  include Equalizer.new(:latitude, :longitude)
+  include Dry::Equalizer(:latitude, :longitude)
 
   attr_reader :latitude, :longitude
 
@@ -50,6 +50,7 @@ Supported Ruby Versions
 This library aims to support and is [tested against][travis] the following Ruby
 implementations:
 
+* Ruby 2.0
 * Ruby 2.1
 * Ruby 2.2
 
