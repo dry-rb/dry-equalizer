@@ -1,3 +1,7 @@
+# v0.1.1 2015-11-13
+
+Make it work with MRI 2.0 again
+
 # v0.1.0 2015-11-11
 
 ## Added
