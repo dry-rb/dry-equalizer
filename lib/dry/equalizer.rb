@@ -38,7 +38,7 @@ module Dry
     # @api private
     def included(descendant)
       super
-      descendant.include Methods
+      descendant.send(:include, Methods)
     end
 
     # Define the equalizer methods based on #keys

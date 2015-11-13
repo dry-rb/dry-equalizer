@@ -16,10 +16,6 @@ end
 
 require 'dry-equalizer'
 
-class Class
-  public :include
-end
-
 RSpec.configure do |config|
   config.raise_errors_for_deprecations!
 
