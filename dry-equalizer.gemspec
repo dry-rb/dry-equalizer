@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.email       = %w[dan.kubb@gmail.com mbj@schirp-dso.com]
   gem.description = 'Module to define equality, equivalence and inspection methods'
   gem.summary     = gem.description
-  gem.homepage    = 'https://github.com/dkubb/equalizer'
+  gem.homepage    = 'https://github.com/dryrb/dry-equalizer'
   gem.licenses    = 'MIT'
 
   gem.require_paths    = %w[lib]
