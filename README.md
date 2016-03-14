@@ -1,5 +1,4 @@
-dry-equalizer
-=========
+# dry-equalizer <a href="https://gitter.im/dry-rb/chat" target="_blank">![Join the chat at https://gitter.im/dry-rb/chat](https://badges.gitter.im/Join%20Chat.svg)</a>
 
 Module to define equality, equivalence and inspection methods
 
