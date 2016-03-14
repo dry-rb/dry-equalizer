@@ -4,14 +4,14 @@ dry-equalizer
 Module to define equality, equivalence and inspection methods
 
 [![Gem Version](http://img.shields.io/gem/v/dry-equalizer.svg)][gem]
-[![Build Status](http://img.shields.io/travis/dryrb/dry-equalizer.svg)][travis]
-[![Dependency Status](http://img.shields.io/gemnasium/dryrb/dry-equalizer.svg)][gemnasium]
-[![Code Climate](http://img.shields.io/codeclimate/github/dryrb/dry-equalizer.svg)][codeclimate]
+[![Build Status](http://img.shields.io/travis/dry-rb/dry-equalizer.svg)][travis]
+[![Dependency Status](http://img.shields.io/gemnasium/dry-rb/dry-equalizer.svg)][gemnasium]
+[![Code Climate](http://img.shields.io/codeclimate/github/dry-rb/dry-equalizer.svg)][codeclimate]
 
 [gem]: https://rubygems.org/gems/dry-equalizer
-[travis]: https://travis-ci.org/dryrb/dry-equalizer
-[gemnasium]: https://gemnasium.com/dryrb/dry-equalizer
-[codeclimate]: https://codeclimate.com/github/dryrb/dry-equalizer
+[travis]: https://travis-ci.org/dry-rb/dry-equalizer
+[gemnasium]: https://gemnasium.com/dry-rb/dry-equalizer
+[codeclimate]: https://codeclimate.com/github/dry-rb/dry-equalizer
 
 Examples
 --------
