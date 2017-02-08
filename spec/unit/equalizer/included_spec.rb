@@ -1,8 +1,6 @@
-# encoding: utf-8
-
 require 'spec_helper'
 
-describe Dry::Equalizer, '#included' do
+RSpec.describe Dry::Equalizer, '#included' do
   subject { descendant.instance_exec(object) { |mod| include mod } }
 
   let(:object)     { described_class.new        }

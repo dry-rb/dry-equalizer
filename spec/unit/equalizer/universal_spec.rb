@@ -1,8 +1,6 @@
-# encoding: utf-8
-
 require 'spec_helper'
 
-describe Dry::Equalizer do
+RSpec.describe Dry::Equalizer do
   let(:object) { described_class }
   let(:name)   { 'User'          }
   let(:klass)  { ::Class.new     }

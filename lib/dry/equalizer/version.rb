@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module Dry
   class Equalizer < Module
     # Gem version

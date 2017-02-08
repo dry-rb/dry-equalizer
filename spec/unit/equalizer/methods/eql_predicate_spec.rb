@@ -1,8 +1,6 @@
-# encoding: utf-8
-
 require 'spec_helper'
 
-describe Dry::Equalizer::Methods, '#eql?' do
+RSpec.describe Dry::Equalizer::Methods, '#eql?' do
   subject { object.eql?(other) }
 
   let(:object) { described_class.new(true) }
