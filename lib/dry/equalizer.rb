@@ -2,7 +2,7 @@ module Dry
   # Build an equalizer module for the inclusion in other class
   #
   # @api public
-  def self.Equalizer(*keys)
+  def self.Equalizer(*keys, immutable: false)
     Dry::Equalizer.new(*keys)
   end
 
@@ -18,8 +18,9 @@ module Dry
     # @return [undefined]
     #
     # @api private
-    def initialize(*keys)
+    def initialize(*keys, immutable: false)
       @keys = keys
+      @immutable = immutable
       define_methods
       freeze
     end
@@ -72,8 +73,18 @@ module Dry
     # @api private
     def define_hash_method
       keys = @keys
-      define_method(:hash) do | |
-        keys.map(&method(:send)).push(self.class).hash
+      immutable = @immutable
+
+      calculate_hash = ->(obj) { keys.map { |k| obj.send(k) }.push(obj.class).hash }
+
+      if immutable
+        define_method(:hash) do
+          @hash ||= calculate_hash.call(self)
+        end
+      else
+        define_method(:hash) do
+          calculate_hash.call(self)
+        end
       end
     end
 

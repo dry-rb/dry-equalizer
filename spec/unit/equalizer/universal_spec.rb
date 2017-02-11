@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'ostruct'
 
 RSpec.describe Dry::Equalizer do
   let(:object) { described_class }
@@ -150,6 +151,21 @@ RSpec.describe Dry::Equalizer do
       it 'returns the expected string' do
         expect(instance.inspect)
           .to eql('#<User firstname="John" lastname="Doe">')
+      end
+    end
+  end
+
+  context 'when immutable' do
+    describe '#hash' do
+      let(:instance) { OpenStruct.new(firstname: 'Foo', lastname: 'Bar') }
+      let(:equalizer) { Dry::Equalizer.new(:firstname, :lastname, immutable: true) }
+
+      before do
+        instance.extend(equalizer)
+      end
+
+      it 'is memoized' do
+        expect { instance.firstname = 'Changed' }.not_to change { instance.hash }
       end
     end
   end
