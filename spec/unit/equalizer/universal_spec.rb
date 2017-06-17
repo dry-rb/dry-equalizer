@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe Dry::Equalizer do
-  let(:object) { described_class }
   let(:name)   { 'User'          }
   let(:klass)  { ::Class.new     }
 
@@ -16,7 +15,7 @@ RSpec.describe Dry::Equalizer do
 
     let(:instance) { klass.new }
 
-    it { should be_instance_of(object) }
+    it { should be_instance_of(described_class) }
 
     it { should be_frozen }
 
@@ -96,7 +95,7 @@ RSpec.describe Dry::Equalizer do
       klass.send(:include, subject)
     end
 
-    it { should be_instance_of(object) }
+    it { should be_instance_of(described_class) }
 
     it { should be_frozen }
 
