@@ -86,8 +86,8 @@ module Dry
       keys = @keys
       define_method(:inspect) do | |
         klass = self.class
-      name  = klass.name || klass.inspect
-      "#<#{name}#{keys.map { |key| " #{key}=#{__send__(key).inspect}" }.join}>"
+        name  = klass.name || klass.inspect
+        "#<#{name}#{keys.map { |key| " #{key}=#{__send__(key).inspect}" }.join}>"
       end
     end
 
@@ -120,7 +120,7 @@ module Dry
       #
       # @api public
       def ==(other)
-        other.kind_of?(self.class) && cmp?(__method__, other)
+        other.is_a?(self.class) && cmp?(__method__, other)
       end
     end # module Methods
   end # class Equalizer
