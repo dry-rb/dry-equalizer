@@ -1,3 +1,11 @@
+# v0.2.1 2018-04-26
+
+### Fixed
+
+* Including equalizer module with same keys multiple times won't cause duped keys in `inspect` output (radar)
+
+[Compare v0.2.0...v0.2.1](https://github.com/dry-rb/dry-equalizer/compare/v0.2.0...v0.2.1)
+
 # v0.2.0 2015-11-13
 
 Really make it work with MRI 2.0 again (it's Friday 13th OK?!)
