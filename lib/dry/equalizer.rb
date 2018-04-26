@@ -19,7 +19,7 @@ module Dry
     #
     # @api private
     def initialize(*keys)
-      @keys = keys
+      @keys = keys.uniq
       define_methods
       freeze
     end

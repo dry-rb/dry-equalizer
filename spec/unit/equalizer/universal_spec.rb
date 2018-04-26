@@ -152,4 +152,42 @@ RSpec.describe Dry::Equalizer do
       end
     end
   end
+
+  context 'with duplicate keys' do
+    subject { Dry::Equalizer(*keys) }
+
+    let(:keys)       { %i[firstname firstname lastname].freeze  }
+    let(:firstname)  { 'John'                                   }
+    let(:lastname)   { 'Doe'                                    }
+    let(:instance)   { klass.new(firstname, lastname)           }
+
+    let(:klass) do
+      ::Class.new do
+        attr_reader :firstname, :lastname
+        private :firstname, :lastname
+
+        def initialize(firstname, lastname)
+          @firstname = firstname
+          @lastname = lastname
+        end
+      end
+    end
+
+    before do
+      # specify the class #inspect method
+      allow(klass).to receive_messages(name: nil, inspect: name)
+      klass.send(:include, subject)
+    end
+
+    it { should be_instance_of(described_class) }
+
+    it { should be_frozen }
+
+    describe '#inspect' do
+      it 'returns the expected string' do
+        expect(instance.inspect)
+          .to eql('#<User firstname="John" lastname="Doe">')
+      end
+    end
+  end
 end
