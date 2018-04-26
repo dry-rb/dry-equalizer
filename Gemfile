@@ -1,9 +1,15 @@
 source 'https://rubygems.org'
 
+gemspec
+
 group :development, :test do
   gem 'rake'
-  gem 'anima', '~> 0.2.0' # for MRI >= 2.0
   gem 'rspec', '~> 3.5'
 end
 
-gemspec
+group :test do
+  platform :mri do
+    gem "codeclimate-test-reporter", require: false
+    gem 'simplecov', require: false
+  end
+end

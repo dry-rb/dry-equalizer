@@ -1,14 +1,13 @@
-if ENV['COVERAGE'] == 'true'
-  require 'simplecov'
+if RUBY_ENGINE == 'ruby' && ENV['COVERAGE'] == 'true'
+  require 'yaml'
+  rubies = YAML.load(File.read(File.join(__dir__, '..', '.travis.yml')))['rvm']
+  latest_mri = rubies.select { |v| v =~ /\A\d+\.\d+.\d+\z/ }.max
 
-  SimpleCov.start do
-    command_name 'spec:unit'
-
-    add_filter 'config'
-    add_filter 'spec'
-    add_filter 'vendor'
-
-    minimum_coverage 100
+  if RUBY_VERSION == latest_mri
+    require 'simplecov'
+    SimpleCov.start do
+      add_filter '/spec/'
+    end
   end
 end
 
