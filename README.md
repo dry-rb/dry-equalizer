@@ -4,8 +4,8 @@ Module to define equality, equivalence and inspection methods
 
 [![Gem Version](http://img.shields.io/gem/v/dry-equalizer.svg)][gem]
 [![Build Status](http://img.shields.io/travis/dry-rb/dry-equalizer.svg)][travis]
-[![Dependency Status](http://img.shields.io/gemnasium/dry-rb/dry-equalizer.svg)][gemnasium]
-[![Code Climate](http://img.shields.io/codeclimate/github/dry-rb/dry-equalizer.svg)][codeclimate]
+[![Maintainability](https://api.codeclimate.com/v1/badges/5a9a139af1d4a80a28c4/maintainability)](https://codeclimate.com/github/dry-rb/dry-equalizer/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5a9a139af1d4a80a28c4/test_coverage)](https://codeclimate.com/github/dry-rb/dry-equalizer/test_coverage)
 
 [gem]: https://rubygems.org/gems/dry-equalizer
 [travis]: https://travis-ci.org/dry-rb/dry-equalizer
@@ -49,9 +49,8 @@ Supported Ruby Versions
 This library aims to support and is [tested against][travis] the following Ruby
 implementations:
 
-* Ruby 2.0
-* Ruby 2.1
-* Ruby 2.2
+* MRI 2.2+
+* JRuby 9.x
 
 If something doesn't work on one of these versions, it's a bug.
 
