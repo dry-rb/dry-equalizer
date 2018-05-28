@@ -9,7 +9,6 @@ Module to define equality, equivalence and inspection methods
 
 [gem]: https://rubygems.org/gems/dry-equalizer
 [travis]: https://travis-ci.org/dry-rb/dry-equalizer
-[gemnasium]: https://gemnasium.com/dry-rb/dry-equalizer
 [codeclimate]: https://codeclimate.com/github/dry-rb/dry-equalizer
 
 Examples
