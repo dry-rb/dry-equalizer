@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
+  gem 'bundler'
   gem 'rake'
   gem 'rspec', '~> 3.5'
 end
