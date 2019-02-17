@@ -19,7 +19,7 @@ module Dry
     #
     # @api private
     def initialize(*keys)
-      @keys = keys.uniq
+      @keys = keys
       define_methods
       freeze
     end
@@ -45,9 +45,9 @@ module Dry
     #
     # @api private
     def define_methods
-      define_cmp_method
-      define_hash_method
-      define_inspect_method
+      define_cmp_method(@keys)
+      define_hash_method(@keys)
+      define_inspect_method(@keys)
     end
 
     # Define an #cmp? method based on the instance's values identified by #keys
@@ -55,10 +55,9 @@ module Dry
     # @return [undefined]
     #
     # @api private
-    def define_cmp_method
-      keys = @keys
+    def define_cmp_method(keys)
       define_method(:cmp?) do |comparator, other|
-        keys.all? do |key|
+        keys.uniq.all? do |key|
           __send__(key).public_send(comparator, other.__send__(key))
         end
       end
@@ -70,10 +69,9 @@ module Dry
     # @return [undefined]
     #
     # @api private
-    def define_hash_method
-      keys = @keys
+    def define_hash_method(keys)
       define_method(:hash) do | |
-        keys.map(&method(:send)).push(self.class).hash
+        keys.uniq.map(&method(:send)).push(self.class).hash
       end
     end
 
@@ -82,12 +80,11 @@ module Dry
     # @return [undefined]
     #
     # @api private
-    def define_inspect_method
-      keys = @keys
+    def define_inspect_method(keys)
       define_method(:inspect) do | |
         klass = self.class
         name  = klass.name || klass.inspect
-        "#<#{name}#{keys.map { |key| " #{key}=#{__send__(key).inspect}" }.join}>"
+        "#<#{name}#{keys.uniq.map { |key| " #{key}=#{__send__(key).inspect}" }.join}>"
       end
     end
 
