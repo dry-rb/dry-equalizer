@@ -10,7 +10,7 @@ RSpec.describe Dry::Equalizer do
     before do
       # specify the class #name method
       allow(klass).to receive(:name).and_return(name)
-      klass.send(:include, subject)
+      klass.include(subject)
     end
 
     let(:instance) { klass.new }
@@ -92,7 +92,7 @@ RSpec.describe Dry::Equalizer do
     before do
       # specify the class #inspect method
       allow(klass).to receive_messages(name: nil, inspect: name)
-      klass.send(:include, subject)
+      klass.include(subject)
     end
 
     it { should be_instance_of(described_class) }
@@ -176,7 +176,7 @@ RSpec.describe Dry::Equalizer do
     before do
       # specify the class #inspect method
       allow(klass).to receive_messages(name: nil, inspect: name)
-      klass.send(:include, subject)
+      klass.include(subject)
     end
 
     it { should be_instance_of(described_class) }
@@ -187,6 +187,30 @@ RSpec.describe Dry::Equalizer do
       it 'returns the expected string' do
         expect(instance.inspect)
           .to eql('#<User firstname="John" lastname="Doe">')
+      end
+    end
+  end
+
+  context 'with options' do
+    context 'w/o inspect' do
+      subject { Dry::Equalizer(*keys, inspect: false) }
+
+      let(:keys)       { %i[firstname lastname].freeze  }
+      let(:firstname)  { 'John'                         }
+      let(:lastname)   { 'Doe'                          }
+      let(:instance)   { klass.new(firstname, lastname) }
+
+      let(:klass) do
+        ::Struct.new(:firstname, :lastname)
+      end
+
+      before { klass.include(subject) }
+
+      describe '#inspect' do
+        it 'returns the default string' do
+          expect(instance.inspect).to eql('#<struct firstname="John", lastname="Doe">')
+          expect(instance.to_s).to eql('#<struct firstname="John", lastname="Doe">')
+        end
       end
     end
   end

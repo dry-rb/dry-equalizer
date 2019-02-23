@@ -2,8 +2,8 @@ module Dry
   # Build an equalizer module for the inclusion in other class
   #
   # @api public
-  def self.Equalizer(*keys)
-    Dry::Equalizer.new(*keys)
+  def self.Equalizer(*keys, **options)
+    Dry::Equalizer.new(*keys, **options)
   end
 
   # Define equality, equivalence and inspection methods
@@ -18,9 +18,9 @@ module Dry
     # @return [undefined]
     #
     # @api private
-    def initialize(*keys)
+    def initialize(*keys, inspect: true)
       @keys = keys.uniq
-      define_methods
+      define_methods(inspect: inspect)
       freeze
     end
 
@@ -44,10 +44,10 @@ module Dry
     # @return [undefined]
     #
     # @api private
-    def define_methods
+    def define_methods(inspect: true)
       define_cmp_method
       define_hash_method
-      define_inspect_method
+      define_inspect_method if inspect
     end
 
     # Define an #cmp? method based on the instance's values identified by #keys
