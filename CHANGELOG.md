@@ -1,15 +1,15 @@
-# to-be-released
+# v0.2.2 2019-03-08
 
 ### Added
 
-* Generation of `#to_s` and `#inspect` can be disabled with `inspect: false` (flash-gordn)
+* Generation of `#to_s` and `#inspect` can be disabled with `inspect: false` (flash-gordon)
   ```ruby
   class User
     include Dry::Equalizer(:id, :name, :age, inspect: false)
   end
   ```
 
-[Compare v0.2.1...master](https://github.com/dry-rb/dry-equalizer/compare/v0.2.1...master)
+[Compare v0.2.1...v0.2.2](https://github.com/dry-rb/dry-equalizer/compare/v0.2.1...v0.2.2)
 
 # v0.2.1 2018-04-26
 
