@@ -14,3 +14,7 @@ group :test do
     gem 'simplecov', require: false
   end
 end
+
+group :tools do
+  gem 'ossy', git: 'https://github.com/solnic/ossy.git', branch: 'master'
+end
