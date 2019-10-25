@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.email       = %w[dan.kubb@gmail.com mbj@schirp-dso.com]
   gem.description = 'Module to define equality, equivalence and inspection methods'
   gem.summary     = gem.description
-  gem.homepage    = 'https://github.com/dryrb/dry-equalizer'
+  gem.homepage    = 'https://github.com/dry-rb/dry-equalizer'
   gem.licenses    = 'MIT'
 
   gem.require_paths    = %w[lib]
@@ -15,5 +15,5 @@ Gem::Specification.new do |gem|
   gem.test_files       = `git ls-files -- spec/{unit,integration}`.split("\n")
   gem.extra_rdoc_files = %w[LICENSE README.md CONTRIBUTING.md]
 
-  gem.required_ruby_version = '>= 2.0.0'
+  gem.required_ruby_version = '>= 2.4.0'
 end
