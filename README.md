@@ -1,15 +1,16 @@
-# dry-equalizer <a href="https://gitter.im/dry-rb/chat" target="_blank">![Join the chat at https://gitter.im/dry-rb/chat](https://badges.gitter.im/Join%20Chat.svg)</a>
+[gem]: https://rubygems.org/gems/dry-equalizer
+[travis]: https://travis-ci.org/dry-rb/dry-equalizer
+[codeclimate]: https://codeclimate.com/github/dry-rb/dry-equalizer
+[chat]: https://dry-rb.zulipchat.com
+
+# dry-equalizer [![Join the chat at https://dry-rb.zulipchat.com](https://img.shields.io/badge/dry--rb-join%20chat-%23346b7a.svg)][chat]
 
 Module to define equality, equivalence and inspection methods
 
 [![Gem Version](http://img.shields.io/gem/v/dry-equalizer.svg)][gem]
 [![Build Status](http://img.shields.io/travis/dry-rb/dry-equalizer.svg)][travis]
-[![Maintainability](https://api.codeclimate.com/v1/badges/5a9a139af1d4a80a28c4/maintainability)](https://codeclimate.com/github/dry-rb/dry-equalizer/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/5a9a139af1d4a80a28c4/test_coverage)](https://codeclimate.com/github/dry-rb/dry-equalizer/test_coverage)
-
-[gem]: https://rubygems.org/gems/dry-equalizer
-[travis]: https://travis-ci.org/dry-rb/dry-equalizer
-[codeclimate]: https://codeclimate.com/github/dry-rb/dry-equalizer
+[![Maintainability](https://api.codeclimate.com/v1/badges/5a9a139af1d4a80a28c4/maintainability)][codeclimate]
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5a9a139af1d4a80a28c4/test_coverage)][codeclimate]
 
 Examples
 --------
