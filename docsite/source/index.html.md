@@ -12,6 +12,8 @@ name: dry-equalizer
 ### Usage
 
 ```ruby
+require 'dry-equalizer'
+
 class GeoLocation
   include Dry::Equalizer(:latitude, :longitude)
 
@@ -38,3 +40,47 @@ point_a.hash == point_c.hash # => false
 point_a.eql?(point_c)        # => false
 point_a.equal?(point_c)      # => false
 ```
+
+### Configuration options
+
+#### inspect
+
+Use `inspect` option to skip `#inspect` method overloading:
+
+```ruby
+class Foo
+  include Dry::Equalizer(:a, inspect: false)
+
+  attr_reader :a, :b
+
+  def initialize(a, b)
+    @a, @b = a, b
+  end
+end
+
+Foo.new(1, 2).inspect
+# => "#<Foo:0x00007fbc9c0487f0 @a=1, @b=2>"
+```
+
+#### immutable
+
+For objects that are immutable it doesn't make sense to calculate `#hash` every time it's called. To memoize hash use `immutable` option:
+
+```ruby
+class ImmutableHash
+  include Dry::Equalizer(:foo, :bar, immutable: true)
+
+  attr_accessor :foo, :bar
+
+  def initialize(foo, bar)
+    @foo, @bar = foo, bar
+  end
+end
+
+obj = ImmutableHash.new('foo', 'bar')
+obj.hash
+
+obj.foo = 'changed'
+obj.hash
+```
+
