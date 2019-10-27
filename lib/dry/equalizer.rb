@@ -77,11 +77,14 @@ module Dry
     #
     # @api private
     def define_hash_method(immutable:)
-      keys = @keys
-      calculate_hash = ->(obj) { keys.map { |key| obj.send(key) }.push(obj.class).hash }
+      calculate_hash = ->(obj) { @keys.map { |key| obj.send(key) }.push(obj.class).hash }
       if immutable
         define_method(:hash) do
           @__hash__ ||= calculate_hash.call(self)
+        end
+        define_method(:freeze) do
+          hash
+          super()
         end
       else
         define_method(:hash) do
