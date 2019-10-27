@@ -49,7 +49,7 @@ Supported Ruby Versions
 This library aims to support and is [tested against][travis] the following Ruby
 implementations:
 
-* MRI 2.2+
+* MRI 2.4+
 * JRuby 9.x
 
 If something doesn't work on one of these versions, it's a bug.

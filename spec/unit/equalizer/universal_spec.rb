@@ -80,6 +80,7 @@ RSpec.describe Dry::Equalizer do
     let(:klass) do
       ::Class.new do
         attr_reader :firstname, :lastname
+        attr_writer :firstname
         private :firstname, :lastname
 
         def initialize(firstname, lastname)
@@ -149,6 +150,26 @@ RSpec.describe Dry::Equalizer do
       it 'returns the expected string' do
         expect(instance.inspect)
           .to eql('#<User firstname="John" lastname="Doe">')
+      end
+    end
+
+    context 'when immutable' do
+      describe '#hash' do
+
+        subject { Dry::Equalizer(*keys, immutable: true) }
+
+        it 'returns memoized hash' do
+          expect { instance.firstname = 'Changed' }.not_to(change { instance.hash })
+        end
+        
+        context 'when frozen' do
+          it 'returns memoized hash' do
+            instance.freeze
+
+            expect(instance.hash)
+              .to eql([firstname, lastname, klass].hash)
+          end
+        end
       end
     end
   end

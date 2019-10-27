@@ -14,13 +14,16 @@ module Dry
     # #hash, and #inspect
     #
     # @param [Array<Symbol>] keys
+    # @param [Hash] options
+    # @option options [Boolean] :inspect whether to define #inspect method
+    # @option options [Boolean] :immutable whether to memoize #hash method
     #
     # @return [undefined]
     #
     # @api private
-    def initialize(*keys, inspect: true)
+    def initialize(*keys, **options)
       @keys = keys.uniq
-      define_methods(inspect: inspect)
+      define_methods(**options)
       freeze
     end
 
@@ -36,17 +39,20 @@ module Dry
     # @api private
     def included(descendant)
       super
-      descendant.send(:include, Methods)
+      descendant.include Methods
     end
 
     # Define the equalizer methods based on #keys
     #
+    # @param [Boolean] inspect whether to define #inspect method
+    # @param [Boolean] immutable whether to memoize #hash method
+    #
     # @return [undefined]
     #
     # @api private
-    def define_methods(inspect: true)
+    def define_methods(inspect: true, immutable: false)
       define_cmp_method
-      define_hash_method
+      define_hash_method(immutable: immutable)
       define_inspect_method if inspect
     end
 
@@ -70,10 +76,20 @@ module Dry
     # @return [undefined]
     #
     # @api private
-    def define_hash_method
-      keys = @keys
-      define_method(:hash) do | |
-        keys.map(&method(:send)).push(self.class).hash
+    def define_hash_method(immutable:)
+      calculate_hash = ->(obj) { @keys.map { |key| obj.send(key) }.push(obj.class).hash }
+      if immutable
+        define_method(:hash) do
+          @__hash__ ||= calculate_hash.call(self)
+        end
+        define_method(:freeze) do
+          hash
+          super()
+        end
+      else
+        define_method(:hash) do
+          calculate_hash.call(self)
+        end
       end
     end
 
@@ -84,7 +100,7 @@ module Dry
     # @api private
     def define_inspect_method
       keys = @keys
-      define_method(:inspect) do | |
+      define_method(:inspect) do
         klass = self.class
         name  = klass.name || klass.inspect
         "#<#{name}#{keys.map { |key| " #{key}=#{__send__(key).inspect}" }.join}>"
@@ -122,6 +138,6 @@ module Dry
       def ==(other)
         other.is_a?(self.class) && cmp?(__method__, other)
       end
-    end # module Methods
-  end # class Equalizer
+    end
+  end
 end
