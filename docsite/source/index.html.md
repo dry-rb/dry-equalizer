@@ -43,7 +43,7 @@ point_a.equal?(point_c)      # => false
 
 ### Configuration options
 
-#### inspect
+#### `inspect`
 
 Use `inspect` option to skip `#inspect` method overloading:
 
@@ -62,7 +62,7 @@ Foo.new(1, 2).inspect
 # => "#<Foo:0x00007fbc9c0487f0 @a=1, @b=2>"
 ```
 
-#### immutable
+#### `immutable`
 
 For objects that are immutable it doesn't make sense to calculate `#hash` every time it's called. To memoize hash use `immutable` option:
 
@@ -78,9 +78,9 @@ class ImmutableHash
 end
 
 obj = ImmutableHash.new('foo', 'bar')
-obj.hash
-
+old_hash = obj.hash
 obj.foo = 'changed'
-obj.hash
+old_hash == obj.hash
+# => true
 ```
 
