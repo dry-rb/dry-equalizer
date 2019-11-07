@@ -6,7 +6,7 @@
 
 ### Added
 
-- Memoization option for immutable objects. If `immutable: true` is passed the result of `.hash` call will be memoized after its first invokation or on `.freeze` call (skryukov)
+- Memoization option for immutable objects. If `immutable: true` is passed the result of `.hash` call will be memoized after its first invocation or on `.freeze` call (skryukov)
   ```ruby
   class User
     include Dry::Equalizer(:id, :name, :age, immutable: true)
