@@ -8,7 +8,7 @@
 Module to define equality, equivalence and inspection methods
 
 [![Gem Version](http://img.shields.io/gem/v/dry-equalizer.svg)][gem]
-[![Build Status](https://github.com/dry-rb/dry-monads/workflows/ci/badge.svg)][ci]
+[![Build Status](https://github.com/dry-rb/dry-equalizer/workflows/ci/badge.svg)][ci]
 [![Maintainability](https://api.codeclimate.com/v1/badges/5a9a139af1d4a80a28c4/maintainability)][codeclimate]
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5a9a139af1d4a80a28c4/test_coverage)][codeclimate]
 
