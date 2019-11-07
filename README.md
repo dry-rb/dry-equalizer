@@ -1,5 +1,5 @@
 [gem]: https://rubygems.org/gems/dry-equalizer
-[travis]: https://travis-ci.org/dry-rb/dry-equalizer
+[ci]: https://github.com/dry-rb/dry-equalizer/actions?query=workflow%3Aci
 [codeclimate]: https://codeclimate.com/github/dry-rb/dry-equalizer
 [chat]: https://dry-rb.zulipchat.com
 
@@ -8,14 +8,13 @@
 Module to define equality, equivalence and inspection methods
 
 [![Gem Version](http://img.shields.io/gem/v/dry-equalizer.svg)][gem]
-[![Build Status](http://img.shields.io/travis/dry-rb/dry-equalizer.svg)][travis]
+[![Build Status](https://github.com/dry-rb/dry-monads/workflows/ci/badge.svg)][ci]
 [![Maintainability](https://api.codeclimate.com/v1/badges/5a9a139af1d4a80a28c4/maintainability)][codeclimate]
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5a9a139af1d4a80a28c4/test_coverage)][codeclimate]
 
-Examples
---------
+## Examples
 
-``` ruby
+```ruby
 class GeoLocation
   include Dry::Equalizer(:latitude, :longitude)
 
@@ -43,14 +42,13 @@ point_a.eql?(point_c)        # => false
 point_a.equal?(point_c)      # => false
 ```
 
-Supported Ruby Versions
------------------------
+## Supported Ruby Versions
 
 This library aims to support and is [tested against][travis] the following Ruby
 implementations:
 
-* MRI 2.4+
-* JRuby 9.x
+- MRI 2.4+
+- JRuby 9.x
 
 If something doesn't work on one of these versions, it's a bug.
 
@@ -66,22 +64,19 @@ patches in a timely fashion. If critical issues for a particular implementation
 exist at the time of a major release, support for that Ruby version may be
 dropped.
 
-Credits
--------
+## Credits
 
 This is a fork of the original [equalizer](https://github.com/dkubb/equalizer).
 
-* Dan Kubb ([dkubb](https://github.com/dkubb))
-* Piotr Solnica ([solnic](https://github.com/solnic))
-* Markus Schirp ([mbj](https://github.com/mbj))
-* Erik Michaels-Ober ([sferik](https://github.com/sferik))
+- Dan Kubb ([dkubb](https://github.com/dkubb))
+- Piotr Solnica ([solnic](https://github.com/solnic))
+- Markus Schirp ([mbj](https://github.com/mbj))
+- Erik Michaels-Ober ([sferik](https://github.com/sferik))
 
-Contributing
--------------
+## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-Copyright
----------
+## Copyright
 
 Copyright &copy; 2009-2013 Dan Kubb. See LICENSE for details.
