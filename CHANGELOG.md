@@ -1,8 +1,25 @@
+# v0.3.0 unreleased
+
+### Changed
+
+- [BREAKING] Dropped support for Ruby < 2.4
+
+### Added
+
+- Memoization option for immutable objects. If `immutable: true` is passed the result of `.hash` call will be memoized after its first invokation or on `.freeze` call (skryukov)
+  ```ruby
+  class User
+    include Dry::Equalizer(:id, :name, :age, immutable: true)
+  end
+  ```
+
+[Compare v0.2.2...master](https://github.com/dry-rb/dry-equalizer/compare/v0.2.2...master)
+
 # v0.2.2 2019-03-08
 
 ### Added
 
-* Generation of `#to_s` and `#inspect` can be disabled with `inspect: false` (flash-gordon)
+- Generation of `#to_s` and `#inspect` can be disabled with `inspect: false` (flash-gordon)
   ```ruby
   class User
     include Dry::Equalizer(:id, :name, :age, inspect: false)
@@ -15,7 +32,7 @@
 
 ### Fixed
 
-* Including equalizer module with same keys multiple times won't cause duped keys in `inspect` output (radar)
+- Including equalizer module with same keys multiple times won't cause duped keys in `inspect` output (radar)
 
 [Compare v0.2.0...v0.2.1](https://github.com/dry-rb/dry-equalizer/compare/v0.2.0...v0.2.1)
 
