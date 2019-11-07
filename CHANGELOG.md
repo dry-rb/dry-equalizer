@@ -1,4 +1,4 @@
-# v0.3.0 unreleased
+# v0.3.0 2019-11-07
 
 ### Changed
 
@@ -13,7 +13,7 @@
   end
   ```
 
-[Compare v0.2.2...master](https://github.com/dry-rb/dry-equalizer/compare/v0.2.2...master)
+[Compare v0.2.2...v0.3.0](https://github.com/dry-rb/dry-equalizer/compare/v0.2.2...v0.3.0)
 
 # v0.2.2 2019-03-08
 
