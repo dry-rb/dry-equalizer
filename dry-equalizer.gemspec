@@ -12,9 +12,9 @@ Gem::Specification.new do |gem|
 
   gem.metadata = {
     'bug_tracker_uri' => 'https://github.com/dry-rb/dry-equalizer/issues',
-    'changelog_uri' => "https://github.com/dry-rb/dry-equalizer/blob/v#{gem.version}/CHANGELOG.md",
+    'changelog_uri' => "https://github.com/dry-rb/dry-equalizer/tree/v#{gem.version}/CHANGELOG.md",
     'documentation_uri' => "https://www.rubydoc.info/gems/dry-equalizer/#{gem.version}",
-    'source_code_uri' => "https://github.com/envato/dry-rb/dry-equalizer/v#{gem.version}"
+    'source_code_uri' => "https://github.com/dry-rb/dry-equalizer/tree/v#{gem.version}"
   }
 
   gem.require_paths    = %w[lib]
