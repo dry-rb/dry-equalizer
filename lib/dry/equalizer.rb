@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Dry
   # Build an equalizer module for the inclusion in other class
   #
