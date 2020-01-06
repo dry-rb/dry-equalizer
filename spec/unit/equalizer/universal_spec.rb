@@ -155,13 +155,12 @@ RSpec.describe Dry::Equalizer do
 
     context 'when immutable' do
       describe '#hash' do
-
         subject { Dry::Equalizer(*keys, immutable: true) }
 
         it 'returns memoized hash' do
           expect { instance.firstname = 'Changed' }.not_to(change { instance.hash })
         end
-        
+
         context 'when frozen' do
           it 'returns memoized hash' do
             instance.freeze
