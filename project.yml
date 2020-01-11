@@ -1,2 +1,6 @@
 name: dry-equalizer
 codacy_id: 2856600c8fc94a30a927b3fb2b65bb37
+gemspec:
+  authors: ["Dan Kubb", "Markus Schirp", "Piotr Solnica"]
+  email: ["piotr.solnica@gmail.com"]
+  summary: "Module to define equality, equivalence and inspection methods"
