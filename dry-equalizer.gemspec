@@ -1,28 +1,29 @@
 # frozen_string_literal: true
+# this file is managed by dry-rb/devtools project
 
-require File.expand_path('../lib/dry/equalizer/version', __FILE__)
+lib = File.expand_path('lib', __dir__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'dry/equalizer/version'
 
-Gem::Specification.new do |gem|
-  gem.name        = 'dry-equalizer'
-  gem.version     = Dry::Equalizer::VERSION.dup
-  gem.authors     = ['Dan Kubb', 'Markus Schirp']
-  gem.email       = %w[dan.kubb@gmail.com mbj@schirp-dso.com]
-  gem.description = 'Module to define equality, equivalence and inspection methods'
-  gem.summary     = gem.description
-  gem.homepage    = 'https://github.com/dry-rb/dry-equalizer'
-  gem.licenses    = 'MIT'
+Gem::Specification.new do |spec|
+  spec.name          = 'dry-equalizer'
+  spec.authors       = ["Dan Kubb", "Markus Schirp", "Piotr Solnica"]
+  spec.email         = ["piotr.solnica@gmail.com"]
+  spec.license       = 'MIT'
+  spec.version       = Dry::Equalizer::VERSION.dup
 
-  gem.metadata = {
-    'bug_tracker_uri' => 'https://github.com/dry-rb/dry-equalizer/issues',
-    'changelog_uri' => "https://github.com/dry-rb/dry-equalizer/tree/v#{gem.version}/CHANGELOG.md",
-    'documentation_uri' => "https://www.rubydoc.info/gems/dry-equalizer/#{gem.version}",
-    'source_code_uri' => "https://github.com/dry-rb/dry-equalizer/tree/v#{gem.version}"
-  }
+  spec.summary       = "Module to define equality, equivalence and inspection methods"
+  spec.description   = spec.summary
+  spec.homepage      = 'https://dry-rb.org/gems/dry-equalizer'
+  spec.files         = Dir['CHANGELOG.md', 'LICENSE', 'README.md', 'dry-equalizer.gemspec', 'lib/**/*']
+  spec.require_paths = ['lib']
 
-  gem.require_paths    = %w[lib]
-  gem.files            = `git ls-files`.split("\n")
-  gem.test_files       = `git ls-files -- spec/{unit,integration}`.split("\n")
-  gem.extra_rdoc_files = %w[LICENSE README.md CONTRIBUTING.md]
+  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
+  spec.metadata['changelog_uri']     = 'https://github.com/dry-rb/dry-equalizer/blob/master/CHANGELOG.md'
+  spec.metadata['source_code_uri']   = 'https://github.com/dry-rb/dry-equalizer'
+  spec.metadata['bug_tracker_uri']   = 'https://github.com/dry-rb/dry-equalizer/issues'
 
-  gem.required_ruby_version = '>= 2.4.0'
+  spec.required_ruby_version = '>= 2.4.0'
+
+  # to update dependencies edit project.yml
 end
