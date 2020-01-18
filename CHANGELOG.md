@@ -13,6 +13,7 @@
 ### Changed
 
 - [BREAKING] Dropped support for Ruby < 2.4
+
 [Compare v0.2.2...v0.3.0](https://github.com/dry-rb/dry-equalizer/compare/v0.2.2...v0.3.0)
 
 ## 0.2.2 2019-03-08
@@ -27,6 +28,7 @@
   end
   ```
 
+
 [Compare v0.2.1...v0.2.2](https://github.com/dry-rb/dry-equalizer/compare/v0.2.1...v0.2.2)
 
 ## 0.2.1 2018-04-26
@@ -36,17 +38,20 @@
 
 - Including equalizer module with same keys multiple times won't cause duped keys in `inspect` output (radar)
 
+
 [Compare v0.2.0...v0.2.1](https://github.com/dry-rb/dry-equalizer/compare/v0.2.0...v0.2.1)
 
 ## 0.2.0 2015-11-13
 
 Really make it work with MRI 2.0 again (it's Friday 13th OK?!)
 
+
 [Compare v0.1.1...v0.2.0](https://github.com/dry-rb/dry-equalizer/compare/v0.1.1...v0.2.0)
 
 ## 0.1.1 2015-11-13
 
 Make it work with MRI 2.0 again
+
 
 [Compare v0.1.0...v0.1.1](https://github.com/dry-rb/dry-equalizer/compare/v0.1.0...v0.1.1)
 
