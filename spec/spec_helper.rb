@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'support/coverage'
+require_relative "support/coverage"
 
-require 'dry-equalizer'
+require "dry-equalizer"
 
 RSpec.configure do |config|
   config.raise_errors_for_deprecations!

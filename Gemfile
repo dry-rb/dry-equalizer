@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-eval_gemfile 'Gemfile.devtools'
+eval_gemfile "Gemfile.devtools"
 
 gemspec
 
 group :development, :test do
-  gem 'rake'
-  gem 'rspec', '~> 3.5'
+  gem "rake"
+  gem "rspec", "~> 3.5"
 end
