@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-require 'rbconfig'
+require "rbconfig"
 
 ::Config = RbConfig unless defined?(::Config)
