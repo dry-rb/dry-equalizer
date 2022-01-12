@@ -14,15 +14,15 @@ name: dry-equalizer
   To update, change your code to <code>Dry::Core::Equalizer</code> and `require 'dry/core/equalizer'`.
 </div>
 
-`dry-equalizer` is a simple mixin that can be used to add instance variable based equality, equivalence and inspection methods to your objects.
+`dry-equalizer` was a simple mixin that can be used to add instance variable based equality, equivalence and inspection methods to your objects.
 
 ### Usage
 
 ```ruby
-require 'dry-equalizer'
+require 'dry/core/equalizer'
 
 class GeoLocation
-  include Dry::Equalizer(:latitude, :longitude)
+  include Dry::Core::Equalizer(:latitude, :longitude)
 
   attr_reader :latitude, :longitude
 
@@ -56,7 +56,7 @@ Use `inspect` option to skip `#inspect` method overloading:
 
 ```ruby
 class Foo
-  include Dry::Equalizer(:a, inspect: false)
+  include Dry::Core::Equalizer(:a, inspect: false)
 
   attr_reader :a, :b
 
@@ -75,7 +75,8 @@ For objects that are immutable it doesn't make sense to calculate `#hash` every 
 
 ```ruby
 class ImmutableHash
-  include Dry::Equalizer(:foo, :bar, immutable: true)
+  include Dry::Core::Equalizer(:foo, :bar, immutable: true)
+
 
   attr_accessor :foo, :bar
 
@@ -90,4 +91,3 @@ obj.foo = 'changed'
 old_hash == obj.hash
 # => true
 ```
-
