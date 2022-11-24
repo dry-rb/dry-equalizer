@@ -9,9 +9,6 @@
 
 [![Gem Version](https://badge.fury.io/rb/dry-equalizer.svg)][gem]
 [![CI Status](https://github.com/dry-rb/dry-equalizer/workflows/ci/badge.svg)][actions]
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2856600c8fc94a30a927b3fb2b65bb37)][codacy]
-[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/2856600c8fc94a30a927b3fb2b65bb37)][codacy]
-[![Inline docs](http://inch-ci.org/github/dry-rb/dry-equalizer.svg?branch=main)][inchpages]
 
 ## Links
 
